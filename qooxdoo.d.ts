@@ -2302,8 +2302,8 @@ class Timer extends qx.core.Object {
 }
 declare module qx.event.dispatch {
 class AbstractBubbling extends qx.core.Object implements qx.event.IEventDispatcher {
-    canDispatchEvent(target:HTMLElement,event:qx.event.type.Event,type:string):boolean;
-    dispatchEvent(target:HTMLElement|any,event?:qx.event.type.Event,type?:string):boolean;
+    canDispatchEvent(target:any,event:qx.event.type.Event,type:string):boolean;
+    dispatchEvent(target:any,event?:qx.event.type.Event,type?:string):boolean;
     constructor (manager?:qx.event.Manager);
      _getParent(target:any):any;
 
@@ -2311,8 +2311,8 @@ class AbstractBubbling extends qx.core.Object implements qx.event.IEventDispatch
 }
 declare module qx.event.dispatch {
 class Direct extends qx.core.Object implements qx.event.IEventDispatcher {
-    canDispatchEvent(target:HTMLElement,event:qx.event.type.Event,type:string):boolean;
-    dispatchEvent(target:HTMLElement|any,event?:qx.event.type.Event,type?:string):boolean;
+    canDispatchEvent(target:any,event:qx.event.type.Event,type:string):boolean;
+    dispatchEvent(target:any,event?:qx.event.type.Event,type?:string):boolean;
     constructor (manager?:qx.event.Manager);
 
 }
@@ -9071,7 +9071,7 @@ declare module qx.ui.progressive.renderer.table {
 class Widths extends qx.core.Object {
     constructor (numColumns?:number);
     getData():qx.data.Array;
-    set(column:number|any,map:IMap):void;
+    set(data:IMap,value?:any):any;
     setMaxWidth(column:number,width:number):void;
     setMinWidth(column:number,width:number):void;
     setWidth(column:number,width:number):void;
@@ -9895,7 +9895,7 @@ class Default extends qx.ui.table.columnmodel.resizebehavior.Abstract {
     resetInitializeWidthsOnEveryAppear():void;
     resetNewResizeBehaviorColumnData():void;
     resetTableColumnModel():void;
-    set(col:number|any,map:IMap):void;
+    set(data:IMap,value?:any):any;
     setInitializeWidthsOnEveryAppear(value:any):boolean;
     setMaxWidth(col:number,width:number):void;
     setMinWidth(col:number,width:number):void;
